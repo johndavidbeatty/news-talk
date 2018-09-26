@@ -1,4 +1,5 @@
-body { background-color: rgb(210, 211, 206) }
+
+body { background-color: rgb(142, 228, 240) }
 #wrapper {
   width: 960px;
   margin-left: auto;
@@ -8,23 +9,25 @@ body { background-color: rgb(210, 211, 206) }
 #articles {
   display: inline-block;
   overflow: auto;
-  width: 60%;
+  width: 70%;
   height: 700px;
 }
 #notes {
-  float: right;
-  width: 30%;
+  width: 70%;
 }
 textarea, input {
   display: block;
   width: 100%;
-  background-color: #FCF5C7;
+  background-color: rgb(200, 222, 226);
 }
 input {
   height: 36px;
-  font-size: 24px;
+  font-size: 18px;
 }
 textarea {
-  height: 200px;
+  height: 150px;
   font-size: 18px;
+}
+h3 {
+  color: darkblue;
 }

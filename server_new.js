@@ -4,6 +4,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/hw13";
 
 // Require all models
 var db = require("./models");
@@ -23,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/hw13");
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 // Routes
 
@@ -35,7 +37,7 @@ app.get("/scrape", function(req, res) {
     var $ = cheerio.load(response.data);
 
 
-    // Now, we grab every h2 within an article tag, and do the following:
+    // Now, we grab every h4 within an article tag, and do the following:
     $("article h4").each(function(i, element) {
       // Save an empty result object
       var result = {};
