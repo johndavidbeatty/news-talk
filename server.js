@@ -117,6 +117,14 @@ app.post("/articles/:id", function(req, res) {
     });
 });
 
+// Route for Deleting and article
+app.delete("/articles/:id", function(req) {
+  // Create a new note and pass the req.body to the entry
+ 
+      return db.Article.findOneAndDelete({ _id: req.params.id });
+    });
+
+
 // Start the server
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
